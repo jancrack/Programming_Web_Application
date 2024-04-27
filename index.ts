@@ -1,11 +1,20 @@
-import express, {Application, Request, Response} from 'express';
+// @ts-ignore
+import express, {Application, json, Request, Response} from 'express';
 
 const app: Application = express();
 
-app.get("/", (req: Request, res: Response) => {
+app.use(json())
+app.get("/api", (req: Request, res: Response) => {
+        const params = req.query;
+        console.log(params)
         res.send({
-            id: 1
+            id: 4
         })
+})
+app.get("/", (req: Request, res: Response) => {
+    res.send({
+        message: "bravo"
+    })
 })
 app.put("/", (req: Request, res: Response) => {
     res.send({
@@ -16,6 +25,7 @@ app.post("/", (req: Request, res: Response) => {
     res.send({
         id: 1
     })
+
 })
 app.delete("/", (req: Request, res: Response) => {
     res.send({
