@@ -4,16 +4,10 @@ import express, {Application, json, Request, Response} from 'express';
 const app: Application = express();
 
 app.use(json())
+
 app.get("/api", (req: Request, res: Response) => {
-        const params = req.query;
-        console.log(params)
-        res.send({
-            id: 4
-        })
-})
-app.get("/", (req: Request, res: Response) => {
     res.send({
-        message: "bravo"
+        message: "1"
     })
 })
 app.put("/", (req: Request, res: Response) => {
@@ -21,9 +15,10 @@ app.put("/", (req: Request, res: Response) => {
         id: 1
     })
 })
-app.post("/", (req: Request, res: Response) => {
+app.post("/api", (req: Request, res: Response) => {
+    console.log(req.body)
     res.send({
-        id: 1
+        id: 2
     })
 
 })
@@ -32,6 +27,6 @@ app.delete("/", (req: Request, res: Response) => {
         id: 1
     })
 })
-app.listen(3000, () => {
+app.listen(3300, () => {
     console.log("Server started");
 })
