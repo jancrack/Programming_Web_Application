@@ -1,5 +1,6 @@
 // @ts-ignore
 import express, {Application, json, Request, Response} from 'express';
+import mysql2 from "mysql";
 
 const app: Application = express();
 
