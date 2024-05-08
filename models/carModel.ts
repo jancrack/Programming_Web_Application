@@ -15,7 +15,7 @@ export class cars extends DB{
     // createCar ми е за POST заявка, където трябва да подадем данните на колата, която искаме да създадем.
     async createCar(carData: any) {
         try {
-            const [result] = await this.conn.query("INSERT INTO cars SET ?", carData);
+            const [result] = await this.conn.query("INSERT INTO cars SET `Brand` = 'audi',`Model` = 'a4',`Fuel type` = 'diesel',`Year` = '2020',`Mileage` = 50000,`Emmission class` = 4,`Cylinder content` = 2000,`Transmission` = 'automatic',`Outer color` = 'red',`1st reg.` = '23/10/2020',`Dynamic Power` = '150hp',`Bodywork` = 'Sedan',`Car description` = 'baksldlask',`Rim size` = 17", carData);
             return result;
         } catch (e){
             const error = e as Error;
