@@ -3,7 +3,7 @@ export class DB {
     conn;
     constructor() {
         this.conn = mysql2.createPool({
-            host: "localhost",
+            host: "127.0.0.1",
             database: "web_application",
             user: "root",
             password: ""

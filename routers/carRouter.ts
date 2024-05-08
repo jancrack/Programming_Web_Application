@@ -7,6 +7,19 @@ const carController = new CarController();
 const getAllCarsHandler = async (req: Request, res: Response) => {
     await carController.getAllCars(req, res);
 }
+const createCarHandler = async (req: Request, res: Response) => {
+    await carController.createCar(req, res);
+}
 
+const updateCarHandler = async (req: Request, res: Response) => {
+    await carController.updateCar(req, res);
+}
 
-carRouter.get("/", getAllCarsHandler)
+const deleteCarHandler = async (req: Request, res: Response) => {
+    await carController.deleteCar(req, res);
+}
+
+carRouter.get("/", getAllCarsHandler);
+carRouter.post("/", createCarHandler);
+carRouter.put("/:id", updateCarHandler);
+carRouter.delete("/:id", deleteCarHandler);
