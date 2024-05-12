@@ -1112,4 +1112,55 @@ img {
     .scrollup {
         right: 3rem;
     }
+    /*=============== FORM STYLES  - Add Car ===============*/
+    .form-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-column input[name="brand"],
+    .form-column input[name="model"],
+    .form-column input[name="fuel-type"],
+    .form-column input[name="year"],
+    .form-column input[name="mileage"],
+    .form-column input[name="emmission-class"],
+    .form-column input[name="cylinder-content"],
+    .form-column input[name="transmission"],
+    .form-column input[name="outer-color"],
+    .form-column input[name="1st-reg"],
+    .form-column input[name="dynamic-power"],
+    .form-column input[name="bodywork"],
+    .form-column textarea[name="car-description"],
+    .form-column input[name="rim-size"] {
+        display: flex;
+        justify-content: center; /* Центрира елементите хоризонтално */
+        align-items: center;
+        width: 320px;
+        padding: 10px;
+        border: 1px solid var(--first-color);
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        background-color: var(--container-color);
+        color: var(--text-color);
+        font-family: var(--body-font);
+    }
+
+    .form-column input[type="submit"] {
+        width: 320px;
+        background-color: var(--first-color);
+        color: var(--white-color);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: var(--body-font);
+        transition: background-color 0.3s ease;
+    }
+
+    .form-column input[type="submit"]:hover {
+        background-color: var(--first-color-alt);
+    }
 }

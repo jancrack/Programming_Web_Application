@@ -5,7 +5,8 @@ export const carRouter = Router();
 
 const carController = new CarController();
 const getAllCarsHandler = async (req: Request, res: Response) => {
-    await carController.getAllCars(req, res);
+    const cars = await carController.getAllCars(req, res);
+    res.json(cars); // Връщане на данните като JSON отговор
 }
 const createCarHandler = async (req: Request, res: Response) => {
     await carController.createCar(req, res);

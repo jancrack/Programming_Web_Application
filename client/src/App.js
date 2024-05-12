@@ -1,16 +1,45 @@
-// src/App.js
-import React from 'react';
-//import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-//import Home from './Home';
-//import AddCar from './AddCar';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import NewCarForm from './NewCarForm';
 
 function App() {
-  return (
-        <div className="App">
-            <p>dad</p>
+    const [cars, setCars] = useState([]);
+    const [isAddingCar, setIsAddingCar] = useState(false);
 
+    useEffect(() => {
+        axios.get('http://localhost:3300/')
+            .then(response => {
+                setCars(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    }, []);
+    const handleCarAdded = () => {
+        setIsAddingCar(false);
+        axios.get('http://localhost:3300/')
+            .then(response => {
+                setCars(response.data);
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
+    };
+    return (
+        <div>
+            {isAddingCar ? (
+                <NewCarForm onCarAdded={handleCarAdded}/>
+            ) : (
+                <button onClick={() => setIsAddingCar(true)}>Add Car</button>
+            )}
+            {cars.map(car => (
+                <div key={car.id}>
+                    <h2>{car.name}</h2>
+                    <p>{car.description}</p>
+                </div>
+            ))}
         </div>
-  );
+    );
 }
 
 export default App;

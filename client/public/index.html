@@ -23,7 +23,7 @@
   <title>Responsive car website - Bedimcode</title>
 </head>
 <body>
-<div id="root"></div>
+
 
 <!--==================== HEADER ====================-->
 <header class="header" id="header">
@@ -49,6 +49,9 @@
 
         <li class="nav__item">
           <a href="#featured" class="nav__link">Featured</a>
+        </li>
+        <li class="nav__item">
+          <a href="#add-car" class="nav__link">Add Car</a>
         </li>
       </ul>
 
@@ -435,10 +438,10 @@
     </div>
   </section>
 
-  <!--==================== OFFER ====================-->
+  <!--==================== Add Car ====================-->
   <section class="offer section">
     <div class="offer__container container grid">
-      <img src="./offer-bg.png" alt="" class="offer__bg">
+
 
       <div class="offer__data">
         <h2 class="section__title offer__title">
@@ -458,6 +461,61 @@
 
       <img src="./offer.png" alt="" class="offer__img">
     </div>
+
+    <section class="create car" id="add-car">
+      <h1 class="section__title">
+        Add Car
+      </h1>
+
+      <div class="featured__container container">
+        <form id="new-car-form" class="form-column">
+          <label for="brand">Brand:</label>
+          <input type="text" id="brand" name="brand">
+
+          <label for="model">Model:</label>
+          <input type="text" id="model" name="model">
+
+          <label for="fuel-type">Fuel Type:</label>
+          <input type="text" id="fuel-type" name="fuel-type">
+
+          <label for="year">Year:</label>
+          <input type="text" id="year" name="year">
+
+          <label for="mileage">Mileage:</label>
+          <input type="text" id="mileage" name="mileage">
+
+          <label for="emmission-class">Emmission Class:</label>
+          <input type="text" id="emmission-class" name="emmission-class">
+
+          <label for="cylinder-content">Cylinder Content:</label>
+          <input type="text" id="cylinder-content" name="cylinder-content">
+
+          <label for="transmission">Transmission:</label>
+          <input type="text" id="transmission" name="transmission">
+
+          <label for="outer-color">Outer Color:</label>
+          <input type="text" id="outer-color" name="outer-color">
+
+          <label for="1st-reg">1st Reg.:</label>
+          <input type="text" id="1st-reg" name="1st-reg">
+
+          <label for="dynamic-power">Dynamic Power:</label>
+          <input type="text" id="dynamic-power" name="dynamic-power">
+
+          <label for="bodywork">Bodywork:</label>
+          <input type="text" id="bodywork" name="bodywork">
+
+          <label for="car-description">Car Description:</label>
+          <textarea id="car-description" name="car-description"></textarea>
+
+          <label for="rim-size">Rim Size:</label>
+          <input type="text" id="rim-size" name="rim-size">
+
+          <input type="submit" value="Create">
+        </form>
+      </div>
+    </section>
+
   </section>
 
   <!--==================== LOGOS ====================-->
