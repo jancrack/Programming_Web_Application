@@ -9,26 +9,25 @@ export class CarController {
 
     async getAllCars(req: Request, res: Response) {
         const cars = await this.carsModel.getAllCars();
-        res.send(cars);
+        return cars;
     }
     async createCar(req: Request, res: Response) {
         try {
             const newCar = await this.carsModel.createCar(req.body);
-            res.send(newCar);
+            return newCar;
         } catch (error) {
             console.error(error);
-            res.status(500).send({ message: 'An error occurred while creating the car.' });
+            throw new Error('An error occurred while creating the car.');
         }
     }
 
     async updateCar(req: Request, res: Response) {
         const updatedCar = await this.carsModel.updateCar(req.params.id, req.body);
-        res.send(updatedCar);
+        return updatedCar;
     }
 
     async deleteCar(req: Request, res: Response) {
         await this.carsModel.deleteCar(req.params.id);
-        res.sendStatus(204);
+        return;
     }
-
 }

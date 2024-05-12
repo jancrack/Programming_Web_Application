@@ -1,13 +1,10 @@
-function createCar(brand, model) {
+function createCar(data) {
     fetch('/cars', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            brand: brand,
-            model: model,
-        }),
+        body: JSON.stringify(data),
     })
         .then(response => response.json())
         .then(data => console.log(data))

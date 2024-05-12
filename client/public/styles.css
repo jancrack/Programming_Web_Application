@@ -1163,4 +1163,29 @@ img {
     .form-column input[type="submit"]:hover {
         background-color: var(--first-color-alt);
     }
+    label[for="carImage"] {
+        width: 320px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    /* Стилизиране на полето за качване на файлове */
+    input[type="file"] {
+        display: none; /* Скрива стандартния input */
+    }
+
+    /* Стилизиране на бутона за изпращане */
+    input[type="submit"] {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
 }

@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start-server": "cd D:\\kursov_tsankov && npm run dev",
+    "start-client": "cd D:\\kursov_tsankov\\client && npm start"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.20",
     "axios": "^1.6.8",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.7",
@@ -13,7 +17,9 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.5",
+    "@types/cors": "^2.8.17",
     "babel-jest": "^29.7.0",
+    "concurrently": "^8.2.2",
     "jest": "^29.7.0",
     "ts-node": "^10.9.2"
   }

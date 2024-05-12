@@ -1,13 +1,18 @@
 // @ts-ignore
 import express from 'express';
-// @ts-ignore
-// import {DB} from "./core/DB";
+import cors from 'cors';
 import {carRouter} from "./routers/carRouter";
 
 const app = express();
 
-app.use(carRouter);
+app.use(cors());
+app.use((req, res, next) => {
+    console.log('Content-Type:', req.headers['content-type']);
+    next();
+});
+app.use(express.json());
 
-app.listen(3300, () => {
+app.use('/cars', carRouter);
+app.listen(3001, () => {
     console.log("Server started");
-})
+});

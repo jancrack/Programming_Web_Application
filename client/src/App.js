@@ -7,7 +7,7 @@ function App() {
     const [isAddingCar, setIsAddingCar] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3300/')
+        axios.get('http://localhost:3001/cars') // Промяна на URL адреса
             .then(response => {
                 setCars(response.data);
             })
@@ -17,7 +17,7 @@ function App() {
     }, []);
     const handleCarAdded = () => {
         setIsAddingCar(false);
-        axios.get('http://localhost:3300/')
+        axios.get('http://localhost:3001/cars') // Промяна на URL адреса
             .then(response => {
                 setCars(response.data);
             })

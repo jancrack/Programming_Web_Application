@@ -125,3 +125,26 @@ sr.reveal(`.about__data, .offer__img`,{origin: 'right'})
 sr.reveal(`.features__map`,{delay: 600, origin: 'bottom'})
 sr.reveal(`.features__card`,{interval: 300})
 sr.reveal(`.featured__card, .logos__content, .footer__content`,{interval: 100})
+
+document.getElementById('new-car-form').addEventListener('submit', function(event) {
+    console.log('Form submitted'); // Добавяне на лог в конзолата
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    console.log(data); // Логване на данните от формата
+
+    fetch('http://localhost:3001/cars', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Логване на отговора от сървъра
+        })
+        .catch(error => console.error('Error:', error));
+});
