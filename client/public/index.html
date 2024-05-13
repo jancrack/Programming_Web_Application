@@ -51,6 +51,9 @@
         <li class="nav__item">
           <a href="#add-car" class="nav__link">Add Car</a>
         </li>
+        <li class="nav__item">
+          <a href="#existing-cars" class="nav__link">Existing Cars</a>
+        </li>
       </ul>
 
       <div class="nav__close" id="nav-close">
@@ -509,15 +512,17 @@
           <label for="rim-size">Rim Size:</label>
           <input type="text" id="rim-size" name="rim-size">
 
+          <label for="price">Price:</label> <!-- New form field for price -->
+          <input type="text" id="price" name="price">
+
           <label for="carImage">Снимка на автомобила:</label>
           <input type="file" id="carImage" name="carImage">
-
-          <div id="root"></div>
 
           <input type="submit" value="Create">
         </form>
       </div>
     </section>
+    <div id="root"></div>
   </section>
 
   <!--==================== LOGOS ====================-->

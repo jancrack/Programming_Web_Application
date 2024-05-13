@@ -1189,3 +1189,19 @@ img {
         border-radius: 5px;
     }
 }
+.form-column input[name="price"] {
+    display: flex;
+    justify-content: center; /* Центрира елементите хоризонтално */
+    align-items: center;
+    width: 320px;
+    padding: 10px;
+    border: 1px solid var(--first-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: var(--container-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+}

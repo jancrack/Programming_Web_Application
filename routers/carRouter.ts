@@ -7,6 +7,7 @@ const carController = new CarController();
 const getAllCarsHandler = async (req: Request, res: Response) => {
     try {
         const cars = await carController.getAllCars(req, res);
+        res.setHeader('Content-Type', 'application/json');
         res.json(cars);
     } catch (error) {
         if (error instanceof Error) {

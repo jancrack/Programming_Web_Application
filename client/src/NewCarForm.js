@@ -17,6 +17,7 @@ function NewCarForm({ onCarAdded }) {
     const [description, setDescription] = useState('');
     const [rimSize, setRimSize] = useState('');
     const [image, setImage] = useState(null);
+    const [price, setPrice] = useState(''); // New state variable for price
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -36,6 +37,7 @@ function NewCarForm({ onCarAdded }) {
         formData.append('Bodywork', bodywork);
         formData.append('Car description', description);
         formData.append('Rim size', rimSize);
+        formData.append('Price', price); // Add price to form data
         if (image) {
             formData.append('Image', image, image.name);
         }
@@ -107,6 +109,10 @@ function NewCarForm({ onCarAdded }) {
             <label>
                 Rim Size:
                 <input type="text" value={rimSize} onChange={(e) => setRimSize(e.target.value)} required />
+            </label>
+            <label>
+                Price: {/* New form field for price */}
+                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} required />
             </label>
             <label>
                 Image:
