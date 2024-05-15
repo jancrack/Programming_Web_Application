@@ -1,0 +1,51 @@
+.NewCarforma {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    width: fit-content;
+    margin-left: 0;
+}
+
+.NewCarforma input, .NewCarforma textarea {
+    border: 2px solid var(--first-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.NewCarforma button {
+    border: 2px solid var(--first-color);
+    border-radius: 4px;
+    padding: 10px;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px;
+}
+
+.NewCarforma button:hover {
+    background-color: var(--first-color-alt);
+}
+
+.NewCarforma label {
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.NewCarforma input[type="file"] {
+    border: 2px solid var(--first-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+.kartinka{
+    border: 2px solid var(--first-color);
+    border-radius: 4px;
+    padding: 10px;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px;
+}

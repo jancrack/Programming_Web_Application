@@ -14,7 +14,7 @@ export class cars extends DB{
 
     // createCar ми е за POST заявка, където трябва да подадем данните на колата, която искаме да създадем.
     async createCar(carData: any) {
-        console.log(carData); // Добавяне на лог в конзолата
+        console.log(carData);
         try {
             const [result] = await this.conn.query(
                 "INSERT INTO cars SET ?",

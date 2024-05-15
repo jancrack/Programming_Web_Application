@@ -20,7 +20,7 @@ function CarList() {
 
     return (
         <div>
-            <h1>Car List</h1>
+
             <div className="featured__container container">
                 <ul className="featured__filters">
                     <li>

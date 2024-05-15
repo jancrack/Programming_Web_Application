@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CarList from './CarList'; // Импортиране на новия компонент
-import './App.css'; // Импортиране на CSS файла
+import CarList from './CarList';
+import NewCarForm from './NewCarForm';
+import './App.css';
 
 function App() {
     const [cars, setCars] = useState([]);
 
+    const fetchCars = async () => {
+        const response = await axios.get('http://localhost:3001/cars');
+        setCars(response.data);
+    };
+
     useEffect(() => {
-        axios.get('http://localhost:3001/cars', {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => {
-                setCars(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
+        fetchCars();
     }, []);
+
+    const handleCarAdded = async (newCar) => {
+        // Изпращане на POST заявка към сървъра с данните за новата кола
+        await axios.post('http://localhost:3001/cars', newCar);
+        // Обновяване на списъка с коли след добавяне на нова кола
+        fetchCars();
+    };
 
     return (
         <div className="app-container">
             <section id="existing-cars">
-                <CarList />
+                <NewCarForm onCarAdded={handleCarAdded}/> {/* Добавяне на NewCarForm в рендер функцията */}
+                <CarList onCarAdded={handleCarAdded}/>
+
             </section>
             {cars.map(car => (
                 <div key={car.id}>
@@ -31,6 +36,7 @@ function App() {
                     <p>{car.description}</p>
                 </div>
             ))}
+
         </div>
     );
 }

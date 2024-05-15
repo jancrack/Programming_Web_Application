@@ -7,8 +7,7 @@ const carController = new CarController();
 const getAllCarsHandler = async (req: Request, res: Response) => {
     try {
         const cars = await carController.getAllCars(req, res);
-        res.setHeader('Content-Type', 'application/json');
-        res.json(cars);
+        res.json(cars); // Изпраща резултата като отговор
     } catch (error) {
         if (error instanceof Error) {
             res.status(500).send({ message: error.message });

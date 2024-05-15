@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './NewCarforma.css';
 
 function NewCarForm({ onCarAdded }) {
     const [brand, setBrand] = useState('');
@@ -48,12 +49,13 @@ function NewCarForm({ onCarAdded }) {
         }
     };
 
+
     const handleImageChange = (event) => {
         setImage(event.target.files[0]);
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="NewCarforma" onSubmit={handleSubmit}>
             <label>
                 Brand:
                 <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} required />
@@ -72,15 +74,15 @@ function NewCarForm({ onCarAdded }) {
             </label>
             <label>
                 Mileage:
-                <input type="text" value={mileage} onChange={(e) => setMileage(e.target.value)} required />
+                <input type="number" value={mileage} onChange={(e) => setMileage(e.target.value)} required />
             </label>
             <label>
                 Emmission Class:
-                <input type="text" value={emmissionClass} onChange={(e) => setEmmissionClass(e.target.value)} required />
+                <input type="number" value={emmissionClass} onChange={(e) => setEmmissionClass(e.target.value)} required />
             </label>
             <label>
                 Cylinder Content:
-                <input type="text" value={cylinderContent} onChange={(e) => setCylinderContent(e.target.value)} required />
+                <input type="number" value={cylinderContent} onChange={(e) => setCylinderContent(e.target.value)} required />
             </label>
             <label>
                 Transmission:
@@ -108,13 +110,13 @@ function NewCarForm({ onCarAdded }) {
             </label>
             <label>
                 Rim Size:
-                <input type="text" value={rimSize} onChange={(e) => setRimSize(e.target.value)} required />
+                <input type="number" value={rimSize} onChange={(e) => setRimSize(e.target.value)} required />
             </label>
             <label>
                 Price: {/* New form field for price */}
-                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} required />
+                <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
             </label>
-            <label>
+            <label className="kartinka">
                 Image:
                 <input type="file" onChange={handleImageChange} />
             </label>
