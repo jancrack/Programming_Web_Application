@@ -3,7 +3,7 @@ import Swiper from 'swiper'; // Assuming you have swiper installed
 import mixitup from 'mixitup'; // Assuming you have mixitup installed
 import ScrollReveal from 'scrollreveal'; // Assuming you have scrollreveal installed
 import './AddCar.css';
-import './main.js';
+import '../main.js';
 function AddCar() {
     /*=============== SHOW MENU ===============*/
     const [showMenu, setShowMenu] = useState(false);

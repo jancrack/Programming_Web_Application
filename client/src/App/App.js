@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CarList from './CarList';
-import NewCarForm from './NewCarForm';
+import CarList from '../CarList/CarList';
+import NewCarForm from '../NewCarForm/NewCarForm';
 import './App.css';
 
 function App() {
