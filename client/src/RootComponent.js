@@ -52,6 +52,7 @@ function RootComponent() {
                             <li className="nav__item">
                                 <a href="#existing-cars" className="nav__link">Existing Cars</a>
                             </li>
+
                         </ul>
 
                         <div className="nav__close" id="nav-close">
@@ -594,6 +595,7 @@ function RootComponent() {
                 &#169; Bedimcode. All rigths reserved
             </span>
             </footer>
+
             <App/>
         </div>
     );

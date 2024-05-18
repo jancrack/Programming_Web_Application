@@ -26,6 +26,11 @@ export class CarController {
         return updatedCar;
     }
 
+    async updateSpecificCar(req: Request, res: Response) {
+        const updatedCar = await this.carsModel.updateSpecificCar(req.params.id, req.body);
+        return updatedCar;
+    }
+
     async deleteCar(req: Request, res: Response) {
         await this.carsModel.deleteCar(req.params.id);
         return;

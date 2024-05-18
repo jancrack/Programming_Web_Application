@@ -22,36 +22,71 @@ function NewCarForm({ onCarAdded }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        /*
+        // const formData = new FormData();
+        // formData.append('Brand', brand);
+        // formData.append('Model', model);
+        // formData.append('Fuel type', fuelType);
+        // formData.append('Year', year);
+        // formData.append('Mileage', mileage);
+        // formData.append('Emmission class', emmissionClass);
+        // formData.append('Cylinder content', cylinderContent);
+        // formData.append('Transmission', transmission);
+        // formData.append('Outer color', outerColor);
+        // formData.append('1st reg.', firstReg);
+        // formData.append('Dynamic Power', dynamicPower);
+        // formData.append('Bodywork', bodywork);
+        // formData.append('Car description', description);
+        // formData.append('Rim size', rimSize);
+        // formData.append('Price', price); // Add price to form data
+        // if (image) {
+        //     formData.append('Image', image, image.name);
+        // }
 
-        const formData = new FormData();
-        formData.append('Brand', brand);
-        formData.append('Model', model);
-        formData.append('Fuel type', fuelType);
-        formData.append('Year', year);
-        formData.append('Mileage', mileage);
-        formData.append('Emmission class', emmissionClass);
-        formData.append('Cylinder content', cylinderContent);
-        formData.append('Transmission', transmission);
-        formData.append('Outer color', outerColor);
-        formData.append('1st reg.', firstReg);
-        formData.append('Dynamic Power', dynamicPower);
-        formData.append('Bodywork', bodywork);
-        formData.append('Car description', description);
-        formData.append('Rim size', rimSize);
-        formData.append('Price', price); // Add price to form data
-        if (image) {
-            formData.append('Image', image, image.name);
+         */
+
+        const formData = {
+            "Brand": brand,
+            "Year": year,
+            "Mileage": mileage,
+            "Fuel_type": fuelType,
+            "Emmission_class": emmissionClass,
+            "Model": model,
+            "Cylinder_content": cylinderContent,
+            "Transmission": transmission,
+            "Outer_color": outerColor,
+            "first_reg": firstReg,
+            "Dynamic_power": dynamicPower,
+            "Bodywork": bodywork,
+            "Car_description": description,
+            "Rim_size": rimSize,
+            "Price": price,
+            "Image": image
         }
-
+        console.log(formData);
         const response = await axios.post('http://localhost:3001/cars', formData);
+
         if (response.status === 200) {
-            onCarAdded();
+
+            // измисли кво да правиш ако/след като се добави кола
         }
     };
 
 
     const handleImageChange = (event) => {
-        setImage(event.target.files[0]);
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            // Когато четенето приключи, `result` ще съдържа base64 кодираната версия на файла
+            const base64String = reader.result;
+            setImage(base64String);
+        };
+
+        if (file) {
+            // Започва четенето на файла като base64
+            reader.readAsDataURL(file);
+        }
     };
 
     return (
